@@ -1,0 +1,13 @@
+---
+name: Auto Merge Double Commit PRs
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+    branches:
+      - 'main'
+      - 'rel-*'
+
+jobs:
+  auto-merge:
+    uses: TessellDevelopment/tessell-ci/.github/workflows/auto_merge.yml@main
+    secrets: inherit
