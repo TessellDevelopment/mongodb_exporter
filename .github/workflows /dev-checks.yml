@@ -1,0 +1,16 @@
+---
+name: Best Practices Check
+on:
+  pull_request:
+    branches:
+      - 'main'
+      - 'rel-*'
+      - 'TS-*' 
+      - 'revert-*'
+
+jobs:
+  dev-checks:
+    uses: TessellDevelopment/tessell-ci/.github/workflows/dev-checks.yml@main
+    secrets: inherit
+    with:
+      check_version_in_gradle_properties: true
