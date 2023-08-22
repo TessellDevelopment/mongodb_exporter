@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    uses: TessellDevelopment/tessell-ci/.github/workflows/build_go_library.yaml@main
+    uses: TessellDevelopment/tessell-ci/.github/workflows/build_go_library.yaml@TDEVOPS-597
     secrets: inherit
     with:
       exporter_config:  '{\"linux\": \"mongodb\"}'
