@@ -23,4 +23,3 @@ jobs:
     with:
       exporter_config:  '{\"linux\": \"mongodb\"}'
       exporter_name: mongodb-exporter
-
