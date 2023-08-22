@@ -1,0 +1,20 @@
+[Unit]
+Description=DB Exporter
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/opt/tessell/db-exporter/db-exporter.env
+
+WorkingDirectory=/opt/tessell/db-exporter/
+ExecStart=/opt/tessell/db-exporter/{{DB_EXPORTER_NAME}} {{DB_EXPORTER_START_OPTIONS}}
+
+KillMode=process
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=dbexporter
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
